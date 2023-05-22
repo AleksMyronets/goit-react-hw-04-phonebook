@@ -20,7 +20,7 @@ export const Forma = ({ arr, onSubmit }) => {
   const hendleNameTelChange = e => {
     const { name, value } = e.currentTarget;
     if (name === 'name') setName(value);
-    if (number === 'namber') setNumber(value);
+    if (number === 'number') setNumber(value);
   };
 
   const reset = () => {
