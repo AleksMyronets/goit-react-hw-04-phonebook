@@ -18,9 +18,18 @@ export const Forma = ({ arr, onSubmit }) => {
   };
 
   const hendleNameTelChange = e => {
-    const { name, value } = e.currentTarget;
-    if (name === 'name') setName(value);
-    if (number === 'number') setNumber(value);
+    const { name, value } = e.target;
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
+
+      case 'number':
+        setNumber(value);
+        break;
+      default:
+        break;
+    }
   };
 
   const reset = () => {
