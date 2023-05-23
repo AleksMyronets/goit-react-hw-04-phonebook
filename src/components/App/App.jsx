@@ -42,7 +42,7 @@ export const App = () => {
     window.localStorage.setItem('contacts', JSON.stringify('contacts'));
   }, [contacts]);
 
-  const visiblContacts = getVisibleContacts();
+  const VisibleContacts = getVisibleContacts();
 
   return (
     <ContainerForm>
@@ -54,7 +54,7 @@ export const App = () => {
         Contacts
       </h2>
       <Filter value={filter} onChange={changeFilter} />
-      <Contacts contacts={visiblContacts} onDeleteContacts={deleteContact} />
+      <Contacts contacts={VisibleContacts} onDeleteContacts={deleteContact} />
     </ContainerForm>
   );
 }
