@@ -19,6 +19,8 @@ export const App = () => {
     );
   };
 
+  const visibleContacts = getVisibleContacts();
+
   const changeFilter = event => {
     setFilter({ filter: event.currentTarget.value });
   };
@@ -29,7 +31,7 @@ export const App = () => {
       name,
       number,
     };
-    setContacts(pravState => [contact, ...pravState]);
+    setContacts(prevState => [...prevState, contact]);
   };
 
   const deleteContact = contactId => {
@@ -42,8 +44,6 @@ export const App = () => {
     window.localStorage.setItem('contacts', JSON.stringify('contacts'));
   }, [contacts]);
 
-  const visiblContacts = getVisibleContacts();
-
   return (
     <ContainerForm>
       <h1 style={{ padding: '10px 20px', textAlign: 'center', color: 'Black' }}>
@@ -54,7 +54,7 @@ export const App = () => {
         Contacts
       </h2>
       <Filter value={filter} onChange={changeFilter} />
-      <Contacts contacts={visiblContacts} onDeleteContacts={deleteContact} />
+      <Contacts contacts={visibleContacts} onDeleteContacts={deleteContact} />
     </ContainerForm>
   );
 }
