@@ -22,7 +22,7 @@ export const App = () => {
   const visibleContacts = getVisibleContacts();
 
   const changeFilter = event => {
-    setFilter({ filter: event.currentTarget.value });
+    setFilter(event.currentTarget.value);
   };
 
   const addContacts = (name, number) => {
